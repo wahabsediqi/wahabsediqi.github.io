@@ -1,49 +1,82 @@
+
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khwaja Wahab Sediqi | Programmer</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .lang-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #eee;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .section {
+            padding: 2rem;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+    <button class="lang-toggle" onclick="toggleLang()">FA / EN</button>
+
     <header>
-        <h1 class="fade-in">خواجه وهاب صدیقی</h1>
-        <p class="fade-in">برنامه‌نویس | یک شخص صبور و با پشتکار</p>
+        <h1 id="name">Khwaja Wahab Sediqi</h1>
+        <p id="profession">Programmer</p>
     </header>
 
-    <nav>
-        <a href="#about">درباره من</a>
-        <a href="#portfolio">نمونه کار</a>
-        <a href="#contact">تماس با من</a>
-    </nav>
-
-    <section id="about" class="fade-in">
-        <h2>درباره من</h2>
-        <p>من یک برنامه‌نویس صبور و با پشتکار هستم که به طراحی و توسعه وب علاقه دارم. در زمینه HTML، CSS، JavaScript و GitHub تجربه دارم.</p>
-    </section>
-
-    <section id="portfolio" class="fade-in">
-        <h2>نمونه کارها</h2>
-        <p>در حال حاضر پروژه‌ای برای نمایش وجود ندارد.</p>
-    </section>
-
-    <section id="contact" class="fade-in">
-        <h2>تماس با من</h2>
-        <form action="#" method="POST">
-            <input type="text" name="name" placeholder="نام شما" required>
-            <input type="email" name="email" placeholder="ایمیل شما" required>
-            <textarea name="message" placeholder="پیام شما" required></textarea>
-            <button type="submit">ارسال</button>
-        </form>
-        <div class="contact-info">
-            <p><strong>WhatsApp:</strong> +93787926992</p>
-            <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/16S1p9xrFM/?mibextid=wwXIfr" target="_blank">پروفایل من</a></p>
+    <section class="section">
+        <div id="about-en">
+            <h2>About Me</h2>
+            <p>I am a patient and perseverant individual with experience in programming and web development. I specialize in clean code, responsive design, and user-focused interfaces.</p>
+        </div>
+        <div id="about-fa" class="hidden">
+            <h2>درباره من</h2>
+            <p>من یک فرد صبور و با پشتکار هستم با تجربه در برنامه‌نویسی و توسعه وب. تخصص من در کد نویسی تمیز، طراحی واکنش‌گرا و رابط کاربری متمرکز بر کاربر است.</p>
         </div>
     </section>
 
-    <footer>
-        <p>© 2025 Khwaja Wahab Sediqi</p>
-    </footer>
+    <section class="section">
+        <div id="contact-en">
+            <h2>Contact</h2>
+            <p>WhatsApp: +93787926992</p>
+            <p>Facebook: <a href="https://www.facebook.com/share/16S1p9xrFM/?mibextid=wwXIfr" target="_blank">My Profile</a></p>
+        </div>
+        <div id="contact-fa" class="hidden">
+            <h2>ارتباط</h2>
+            <p>واتساپ: +93787926992</p>
+            <p>فیس‌بوک: <a href="https://www.facebook.com/share/16S1p9xrFM/?mibextid=wwXIfr" target="_blank">پروفایل من</a></p>
+        </div>
+    </section>
+
+    <script>
+        let lang = 'en';
+        function toggleLang() {
+            lang = lang === 'en' ? 'fa' : 'en';
+            document.getElementById('about-en').classList.toggle('hidden');
+            document.getElementById('about-fa').classList.toggle('hidden');
+            document.getElementById('contact-en').classList.toggle('hidden');
+            document.getElementById('contact-fa').classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
